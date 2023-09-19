@@ -5,17 +5,22 @@
 function zipList(list1, list2)
 {
   let zipped = []
-  let i = 0
 
-  while(i < list1.length)
+  for(let i = 0; i < list1.length; i++)
   {
     zipped.push(list1[i])
     zipped.push(list2[i])
   }
-
   return zipped
 }
 
-console.log(zipList([1, 3, 7], ["Honolulu", "San Marcos", "Seattle"]))
+function zipListTheSimpleWay(list1, list2)
+{
+  return _.zip(list1, list2)
+}
 
+one = [1, 3, 7]
+two = ["Honolulu", "Sacramento", "Olympia"]
 
+console.log(zipList(one, two))
+console.log(zipListTheSimpleWay(one, two))
